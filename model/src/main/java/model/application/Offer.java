@@ -16,6 +16,8 @@ public class Offer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	private String name;
+
 	private Date createTime;
 
 	private boolean active;
