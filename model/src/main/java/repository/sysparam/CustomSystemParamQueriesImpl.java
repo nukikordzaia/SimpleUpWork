@@ -1,6 +1,7 @@
 package repository.sysparam;
 
 import model.sysparams.SystemParameter;
+import utils.ListResult;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,8 +16,8 @@ public class CustomSystemParamQueriesImpl implements CustomSystemParamQueries {
 	private EntityManager em;
 
 	@Override
-	public List<SystemParameter> filterByAttributes(String code, String description, String value) {
-		StringBuilder sql = new StringBuilder("SELECT a from SystemParameter a WHERE 1=1 ");
+	public ListResult<SystemParameter> filterByAttributes(String code, String description, String value, int limit, int page) {
+		StringBuilder sql = new StringBuilder();
 		Map<String, Object> params = new HashMap<String, Object>();
 		if (code != null) {
 			sql.append("AND a.code = :code ");
@@ -33,10 +34,17 @@ public class CustomSystemParamQueriesImpl implements CustomSystemParamQueries {
 			params.put("value", value);
 		}
 
-		TypedQuery<SystemParameter> query = em.createQuery(sql.toString(), SystemParameter.class);
+		TypedQuery<SystemParameter> query = em.createQuery("SELECT a from SystemParameter a WHERE 1=1 " + sql, SystemParameter.class);
+		TypedQuery<Long> count = em.createQuery("SELECT COUNT(a.id) FROM SystemParameter a WHERE 1=1 " + sql, Long.class);
+
 		for (String key : params.keySet()) {
 			query.setParameter(key, params.get(key));
+			count.setParameter(key, params.get(key));
 		}
-		return query.getResultList();
+		query.setFirstResult(limit * page);
+		query.setMaxResults(limit);
+		List<SystemParameter> sysParams = query.getResultList();
+
+		return new ListResult<>(sysParams, count.getSingleResult().intValue());
 	}
 }

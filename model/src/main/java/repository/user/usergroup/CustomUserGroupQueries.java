@@ -1,11 +1,9 @@
 package repository.user.usergroup;
 
-import model.sysparams.SystemParameter;
 import model.user.UserGroup;
-
-import java.util.List;
+import utils.ListResult;
 
 public interface CustomUserGroupQueries {
 
-	List<UserGroup> filterByAttributes(String name, String permission, Boolean active);
+	ListResult<UserGroup> filterByAttributes(String name, String permission, Boolean active, int limit, int page);
 }

@@ -1,14 +1,14 @@
-package com.upworkgeorgia.UpWorkGeorgia;
+package com.simpleUpWork.SimpleUpWork;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
-public class UpWorkGeorgiaApplication {
+public class SimpleUpWorkApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UpWorkGeorgiaApplication.class, args);
+		SpringApplication.run(SimpleUpWorkApplication.class, args);
 	}
 
 }

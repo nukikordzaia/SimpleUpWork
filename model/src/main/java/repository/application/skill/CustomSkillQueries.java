@@ -1,10 +1,9 @@
 package repository.application.skill;
 
 import model.application.Skill;
-
-import java.util.List;
+import utils.ListResult;
 
 public interface CustomSkillQueries {
 
-	List<Skill> filterByAttributes(String name);
+	ListResult<Skill> filterByAttributes(String name, int limit, int page);
 }

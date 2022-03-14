@@ -1,10 +1,9 @@
 package repository.sysparam;
 
 import model.sysparams.SystemParameter;
-
-import java.util.List;
+import utils.ListResult;
 
 public interface CustomSystemParamQueries {
 
-	List<SystemParameter> filterByAttributes(String code, String description, String value);
+	ListResult<SystemParameter> filterByAttributes(String code, String description, String value, int limit, int page);
 }
