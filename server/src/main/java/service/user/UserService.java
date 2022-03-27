@@ -29,7 +29,7 @@ public class UserService {
 		userRepository.deleteById(id);
 	}
 
-	public void save(SystemUser user) {
-		userRepository.save(user);
+	public SystemUser save(SystemUser user) {
+		return userRepository.save(user);
 	}
 }
