@@ -1,6 +1,7 @@
 package com.simpleupwork.repository.application;
 
 import com.simpleupwork.model.application.Application;
+import com.simpleupwork.model.user.SystemUser;
 import com.simpleupwork.utils.ListResult;
 
 import javax.persistence.EntityManager;
@@ -17,13 +18,18 @@ public class CustomApplicationQueriesImpl implements CustomApplicationQueries {
 	EntityManager em;
 
 	@Override
-	public ListResult<Application> filterByAttributes(String name, Long salary, Boolean active, Date createTime,
+	public ListResult<Application> filterByAttributes(String name, String skills, Long salary, Boolean active, Date createTime,
                                                       Date startDate, Date endDate, int limit, int page) {
 		StringBuilder sql = new StringBuilder();
-		Map<String, Object> params = new HashMap<String, Object>();
+		Map<String, Object> params = new HashMap<>();
 		if (name != null) {
 			sql.append("AND a.name = :name ");
 			params.put("name", name);
+		}
+
+		if (skills != null) {
+			sql.append("AND c.skills = :skills ");
+			params.put("skills", skills);
 		}
 
 		if (salary != null) {
@@ -51,8 +57,10 @@ public class CustomApplicationQueriesImpl implements CustomApplicationQueries {
 			params.put("endDate", endDate);
 		}
 
-		TypedQuery<Application> query = em.createQuery("SELECT a from Application a WHERE 1=1 " + sql, Application.class);
-		TypedQuery<Long> count = em.createQuery("SELECT COUNT(a.id) FROM Application a WHERE 1=1 " + sql, Long.class);
+		TypedQuery<Application> query = em.createQuery("SELECT DISTINCT a from Application a " +
+			"LEFT JOIN a.skills c  WHERE 1=1 " + sql, Application.class);
+		TypedQuery<Long> count = em.createQuery("SELECT COUNT(DISTINCT a.id) FROM Application a LEFT JOIN a.skills c " +
+			"WHERE 1=1 " + sql, Long.class);
 
 		for (String key : params.keySet()) {
 			query.setParameter(key, params.get(key));

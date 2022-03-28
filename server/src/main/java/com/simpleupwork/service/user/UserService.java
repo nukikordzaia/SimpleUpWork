@@ -1,4 +1,4 @@
-package service.user;
+package com.simpleupwork.service.user;
 
 import com.simpleupwork.model.user.SystemUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class UserService {
 		userRepository.deleteById(id);
 	}
 
-	public void save(SystemUser user) {
-		userRepository.save(user);
+	public SystemUser save(SystemUser user) {
+		return userRepository.save(user);
 	}
 }
