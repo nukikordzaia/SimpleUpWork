@@ -60,9 +60,9 @@ public class CustomSystemUserQueriesImpl implements CustomSystemUserQueries {
 			params.put("active", active);
 		}
 
-		TypedQuery<SystemUser> query = em.createQuery("SELECT DISTINCT a from SystemUser a " +
+		TypedQuery<SystemUser> query = em.createQuery("SELECT DISTINCT a FROM SystemUser a " +
 			"LEFT JOIN a.groups b " + "AND LEFT JOIN a.skills c  WHERE 1=1 " + sql, SystemUser.class);
-		TypedQuery<Long> count = em.createQuery("SELECT COUNT(DISTINCT a.id) from SystemUser a LEFT JOIN a.groups b " +
+		TypedQuery<Long> count = em.createQuery("SELECT COUNT(DISTINCT a.id) FROM SystemUser a LEFT JOIN a.groups b " +
 			"AND LEFT JOIN a.skills c  WHERE 1=1 " + sql, Long.class);
 
 		for (String key : params.keySet()) {

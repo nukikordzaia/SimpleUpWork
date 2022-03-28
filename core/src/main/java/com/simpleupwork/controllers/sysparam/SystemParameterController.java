@@ -1,8 +1,6 @@
 package com.simpleupwork.controllers.sysparam;
 
 import com.simpleupwork.model.sysparams.SystemParameter;
-import com.simpleupwork.model.sysparams.SystemParameterType;
-import com.simpleupwork.model.user.SystemUser;
 import com.simpleupwork.utils.ListResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import service.sysparam.SysParamService;
-
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import java.util.Date;
+import com.simpleupwork.service.sysparam.SysParamService;
 
 @RestController
 @RequestMapping("/systemParameters")

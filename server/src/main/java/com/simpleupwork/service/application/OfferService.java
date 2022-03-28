@@ -1,4 +1,4 @@
-package service.application;
+package com.simpleupwork.service.application;
 
 import com.simpleupwork.model.application.Offer;
 import com.simpleupwork.repository.application.offer.OfferRepository;
