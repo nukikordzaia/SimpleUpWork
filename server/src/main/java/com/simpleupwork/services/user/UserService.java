@@ -1,4 +1,4 @@
-package com.simpleupwork.service.user;
+package com.simpleupwork.services.user;
 
 import com.simpleupwork.model.user.SystemUser;
 import org.springframework.beans.factory.annotation.Autowired;

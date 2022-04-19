@@ -1,4 +1,4 @@
-package com.simpleupwork.service.sysparam;
+package com.simpleupwork.services.sysparam;
 
 import com.simpleupwork.model.sysparams.SystemParameter;
 import org.springframework.beans.factory.annotation.Autowired;

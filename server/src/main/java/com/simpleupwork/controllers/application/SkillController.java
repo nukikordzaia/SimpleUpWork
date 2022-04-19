@@ -5,7 +5,7 @@ import com.simpleupwork.utils.ListResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.simpleupwork.service.application.SkillService;
+import com.simpleupwork.services.application.SkillService;
 
 @RestController
 @RequestMapping("/skill")
@@ -16,10 +16,8 @@ public class SkillController {
 
 
 	@GetMapping("/all")
-	public ResponseEntity<ListResult<Skill>> filterByAttributes(@RequestParam(required = false) String name,
-																@RequestParam(required = false) int limit,
-																@RequestParam(required = false) int page) {
-		return ResponseEntity.ok(skillService.filterByAttributes(name, limit, page));
+	public ResponseEntity<ListResult<Skill>> filterByAttributes(@RequestParam(required = false) String name) {
+		return ResponseEntity.ok(skillService.filterByAttributes(name));
 	}
 
 	@DeleteMapping(path = "/delete/{id}")

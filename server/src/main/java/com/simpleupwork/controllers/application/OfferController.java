@@ -1,7 +1,7 @@
 package com.simpleupwork.controllers.application;
 
 import com.simpleupwork.model.application.Offer;
-import com.simpleupwork.service.application.OfferService;
+import com.simpleupwork.services.application.OfferService;
 import com.simpleupwork.utils.ListResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

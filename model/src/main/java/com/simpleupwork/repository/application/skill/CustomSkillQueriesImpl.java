@@ -16,7 +16,7 @@ public class CustomSkillQueriesImpl implements CustomSkillQueries {
 	EntityManager em;
 
 	@Override
-	public ListResult<Skill> filterByAttributes(String name, int limit, int page) {
+	public ListResult<Skill> filterByAttributes(String name) {
 		StringBuilder sql = new StringBuilder();
 		Map<String, Object> params = new HashMap<String, Object>();
 		if (name != null) {
@@ -31,8 +31,6 @@ public class CustomSkillQueriesImpl implements CustomSkillQueries {
 			query.setParameter(key, params.get(key));
 			count.setParameter(key, params.get(key));
 		}
-		query.setFirstResult(limit * page);
-		query.setMaxResults(limit);
 		List<Skill> skills = query.getResultList();
 
 		return new ListResult<>(skills, count.getSingleResult().intValue());
