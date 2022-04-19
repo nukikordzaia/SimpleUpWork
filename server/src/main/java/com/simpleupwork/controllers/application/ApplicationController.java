@@ -1,5 +1,6 @@
 package com.simpleupwork.controllers.application;
 
+import com.simpleupwork.services.application.AppService;
 import com.simpleupwork.model.application.Application;
 import com.simpleupwork.utils.ListResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.simpleupwork.service.application.AppService;
 
 import java.util.Date;
 import java.util.Optional;

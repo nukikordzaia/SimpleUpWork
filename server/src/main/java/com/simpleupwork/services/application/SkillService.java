@@ -1,4 +1,4 @@
-package com.simpleupwork.service.application;
+package com.simpleupwork.services.application;
 
 import com.simpleupwork.model.application.Skill;
 import com.simpleupwork.repository.application.skill.SkillRepository;
@@ -18,8 +18,8 @@ public class SkillService {
 		return skillRepository.findById(id);
 	}
 
-	public ListResult<Skill> filterByAttributes(String name, int limit, int page) {
-		return skillRepository.filterByAttributes(name, limit, page);
+	public ListResult<Skill> filterByAttributes(String name) {
+		return skillRepository.filterByAttributes(name);
 	}
 
 	public Skill save(Skill skill) {

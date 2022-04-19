@@ -5,5 +5,5 @@ import com.simpleupwork.utils.ListResult;
 
 public interface CustomSkillQueries {
 
-	ListResult<Skill> filterByAttributes(String name, int limit, int page);
+	ListResult<Skill> filterByAttributes(String name);
 }
