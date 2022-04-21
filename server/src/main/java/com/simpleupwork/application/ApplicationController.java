@@ -1,6 +1,5 @@
-package com.simpleupwork.controllers.application;
+package com.simpleupwork.application;
 
-import com.simpleupwork.services.application.AppService;
 import com.simpleupwork.model.application.Application;
 import com.simpleupwork.utils.ListResult;
 import org.springframework.beans.factory.annotation.Autowired;

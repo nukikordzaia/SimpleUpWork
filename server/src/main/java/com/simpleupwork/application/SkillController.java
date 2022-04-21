@@ -1,11 +1,10 @@
-package com.simpleupwork.controllers.application;
+package com.simpleupwork.application;
 
 import com.simpleupwork.model.application.Skill;
 import com.simpleupwork.utils.ListResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.simpleupwork.services.application.SkillService;
 
 @RestController
 @RequestMapping("/skill")

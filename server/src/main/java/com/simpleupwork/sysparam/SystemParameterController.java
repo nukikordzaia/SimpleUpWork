@@ -1,4 +1,4 @@
-package com.simpleupwork.controllers.sysparam;
+package com.simpleupwork.sysparam;
 
 import com.simpleupwork.model.sysparams.SystemParameter;
 import com.simpleupwork.utils.ListResult;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.simpleupwork.services.sysparam.SysParamService;
 
 @RestController
 @RequestMapping("/systemParameters")
