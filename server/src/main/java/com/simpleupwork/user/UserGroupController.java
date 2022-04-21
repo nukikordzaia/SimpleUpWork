@@ -1,4 +1,4 @@
-package com.simpleupwork.controllers.user;
+package com.simpleupwork.user;
 
 import com.simpleupwork.model.user.UserGroup;
 import com.simpleupwork.utils.ListResult;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.simpleupwork.services.user.UserGroupService;
 
 import java.util.Date;
 import java.util.Optional;

@@ -1,7 +1,6 @@
-package com.simpleupwork.controllers.user;
+package com.simpleupwork.user;
 
 import com.simpleupwork.model.user.SystemUser;
-import com.simpleupwork.services.user.UserService;
 import com.simpleupwork.utils.ListResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
