@@ -7,6 +7,8 @@ import com.simpleupwork.model.application.Skill;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -43,6 +45,9 @@ public class SystemUser {
 	private String firstName;
 
 	private String lastName;
+
+	@Enumerated(EnumType.STRING)
+	private Gender gender;
 
 	private String title;
 
